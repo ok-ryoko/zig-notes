@@ -1,0 +1,25 @@
+name: ci-md
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on:
+      - ubuntu-22.04
+
+    steps:
+      - name: Check out last commit on branch main
+        uses: actions/checkout@v3
+
+      - name: Setup linter
+        run: gem install mdl
+
+      - name: Lint all Markdown files
+        run: mdl .

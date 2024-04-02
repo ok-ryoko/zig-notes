@@ -6,6 +6,8 @@ on:
     paths:
       - '**.md'
 
+  workflow_dispatch:
+
 permissions:
   contents: read
 

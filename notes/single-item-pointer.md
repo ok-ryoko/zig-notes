@@ -1,10 +1,10 @@
 # Single-item Pointer #
 
-Created on 2024-03-12; last updated on 2024-04-01
+Created on 2024-03-12; last updated on 2024-04-08
 
 The type `*T` describes a [pointer](./pointer.md) to exactly one value of type `T`.
 
-For any variable `x` of type `T`, `&x` represents the memory address of `x` as a value of type `*T`. If `x` is `const`, then `&x` evaluates to a value of type `*const T`.
+For any variable `x` of type `T`, `&x` represents the memory address of `x` as a value of type `*T`. If `x` is `const`, then `&x` evaluates to a value of type [`*const T`](./const-pointer.md).
 
 For any pointer `p` of type `*T`, `p.*` evaluates to the value of type `T` at the memory address held by `p`.
 

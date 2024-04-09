@@ -1,6 +1,6 @@
 # Pointer #
 
-Created on 2024-03-12; last updated on 2024-04-08
+Created on 2024-03-12; last updated on 2024-04-09
 
 A pointer is a memory address allowing us to read and possibly write data at that address.
 
@@ -23,7 +23,7 @@ Every pointer type has the following attributes:
 - address space, which communicates the segment of memory in which the pointer is valid;
 - a flag to indicate whether the pointer can't be used to mutate the data to which it points, i.e., whether the pointer is [`const`](./const-pointer.md);
 - a flag to indicate whether reads and writes via the pointer have side effects (as in direct hardware access via MMIO), i.e., whether the pointer is [`volatile`](./volatile.md);
-- a flag to indicate whether the pointer may hold the zero memory address, i.e., whether the pointer is `allowzero`, and
+- a flag to indicate whether the pointer may hold the zero memory address, i.e., whether the pointer is [`allowzero`](./allowzero.md), and
 - sentinel value, which appears immediately after the last element in a sentinel-terminated array, many-item pointer or slice.
 
 The size of each pointer type is machine-dependent. Single-item, many-item and C pointer types have a size equal to the size of the `usize` integral type. Slice types, representing fat pointers, have a size equal to twice the size of `usize`.

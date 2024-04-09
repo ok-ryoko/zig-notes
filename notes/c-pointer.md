@@ -1,6 +1,6 @@
 # C Pointer #
 
-Created on 2024-03-12; last updated on 2024-04-01
+Created on 2024-03-12; last updated on 2024-04-09
 
 The type `[*c]T` describes a C [pointer](./pointer.md).
 
@@ -12,7 +12,7 @@ For any C pointer `p` to a single struct containing a field `f`, `p.*.f` accesse
 
 For any C pointer `p` to an array of structs, each containing a field `f`, `p[i].f` accesses `f` on the `i`th struct in the array, where `i` is a `usize` holding a valid index into the array. This is the same syntax as in C.
 
-All C pointers are `allowzero`, i.e., may hold the zero address, and may be initialized with the `null` primitive. (The type `@TypeOf(null)` coerces to the type `[*c]T` for any choice of `T`.) For this reason, the compiler refuses to construct the type `[*c]allowzero T`. However, it is possible to initialize an [optional](./optional-pointer.md) C pointer, i.e., value of type `?[*c]T`.
+All C pointers are [`allowzero`](./allowzero.md) and may be initialized with the `null` primitive. (The type `@TypeOf(null)` coerces to the type `[*c]T` for any choice of `T`.) For this reason, the compiler refuses to construct the type `[*c]allowzero T`. However, it is possible to initialize an [optional](./optional-pointer.md) C pointer, i.e., value of type `?[*c]T`.
 
 Null C pointers can't be dereferenced, indexed or sliced.
 

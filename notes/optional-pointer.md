@@ -1,12 +1,12 @@
 # Optional Pointer #
 
-Created on 2024-03-19; last updated on 2024-04-01
+Created on 2024-03-19; last updated on 2024-04-09
 
 The type `?*T` describes an optional [single-item pointer](./single-item-pointer.md) to exactly one value of type `T`.
 
 The statements below generalize to optional [many-item pointer](./many-item-pointer.md) types but not optional [slice](./slice.md) types because [slices are not pointers](./slices-are-not-pointers.md).
 
-Any optional pointer may have the value `null`, which is guaranteed to represent the zero memory address. Indeed, the types `?*T` and `*allowzero T` coerce to one another, although the primitive `null` can't be assigned to a variable of type `*allowzero T`.
+Any optional pointer may have the value `null`, which is guaranteed to represent the zero memory address. Indeed, the types `?*T` and [`*allowzero T`](./allowzero.md) coerce to one another, although the primitive `null` can't be assigned to a variable of type `*allowzero T`.
 
 It is an error to attempt memory access through a *null pointer* (an optional pointer that has the value `null`).
 

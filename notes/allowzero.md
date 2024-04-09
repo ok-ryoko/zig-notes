@@ -16,6 +16,8 @@ All [C pointers](./c-pointer.md) are implicitly `allowzero` and the type `[*c]al
 
 It is possible to initialize a variable of type `?*allowzero T`. This type seems to have limited practical utility beyond testing the compiler's casting behavior.
 
+Zig doesn't account for the fact that on some targets whether a pointer may or may not be `allowzero` depends on its [address space](./address-space.md).
+
 The `allowzero` attribute is meaningful only for standalone/freestanding programs and on systems that allow mapping the zero address for, e.g., emulating legacy environments.
 
 ## Further reading ##

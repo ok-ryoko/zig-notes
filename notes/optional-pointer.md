@@ -23,3 +23,5 @@ What about [C pointers](./c-pointer.md)?
 - The primitive `null` can be assigned to a variable of type `[*c]T`;
 - `?[*c]T` is to `[*c]T` as `?*allowzero T` is to `*allowzero T`, and
 - the compiler refuses to construct the type `[*c]allowzero T` because all C pointer types are necessarilly `allowzero`.
+
+Zig doesn't account for the fact that on some targets the value of the null pointer depends on its [address space](./address-space.md).

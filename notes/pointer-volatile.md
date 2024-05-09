@@ -1,6 +1,6 @@
 # volatile (Pointer) #
 
-Created on 2024-04-04; last updated on 2024-04-08
+Created on 2024-04-04; last updated on 2024-05-09
 
 If the type of a pointer has the `volatile` qualifier, then loads and stores with that pointer are guaranteed by the compiler to take place and to take place in the same order as in the source code relative to other volatile loads and stores.
 

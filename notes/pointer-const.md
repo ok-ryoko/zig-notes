@@ -1,6 +1,6 @@
 # const (Pointer) #
 
-Created on 2024-04-03; last updated on 2024-04-08
+Created on 2024-04-03; last updated on 2024-05-09
 
 If the type of a pointer has the `const` qualifier, then that pointer may not be used to mutate the referenced data.
 

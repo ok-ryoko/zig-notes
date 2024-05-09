@@ -20,7 +20,7 @@ Every pointer type has the following attributes:
 - size, which determines the pointer type;
 - child type, which tells us how to interpret the data to which the pointer points;
 - alignment, which holds the alignment of the pointer;
-- [address space](./address-space.md), which communicates the segment of memory in which the pointer is valid;
+- [address space](./pointer-address-space.md), which communicates the segment of memory in which the pointer is valid;
 - a flag to indicate whether the pointer can't be used to mutate the data to which it points, i.e., whether the pointer is [`const`](./pointer-const.md);
 - a flag to indicate whether reads and writes via the pointer have side effects (as in direct hardware access via MMIO), i.e., whether the pointer is [`volatile`](./pointer-volatile.md);
 - a flag to indicate whether the pointer may hold the zero memory address, i.e., whether the pointer is [`allowzero`](./allowzero.md), and

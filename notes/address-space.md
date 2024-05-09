@@ -1,10 +1,10 @@
 # Address Space #
 
-Created on 2024-04-04; last updated on 2024-04-09
+Created on 2024-04-04; last updated on 2024-05-09
 
 An *address space* is any logical range of memory addresses.
 
-Global constant values, global mutable values, function-local values and functions each have their own target-dependent default address space. Every [pointer type](./pointer.md) also has an address space attribute that indicates the address space in which every pointer of that type is meaningful.
+Global constant values, global mutable values, function-local values and functions each have their own target-dependent default address space.
 
 The `addrspace` keyword can be used to qualify the address space of a global variable, function body or pointer but not a function-local variable or function pointer.
 
@@ -42,20 +42,6 @@ There is an [accepted proposal][ziglang/zig issue 9815] to implement I/O address
 Address spaces are principally of concern to people who are programming embedded systems or GPUs, or developing standalone/freestanding programs, operating systems, compilers, etc.
 
 The concept of an address space was first described by ISO/IEC JTC1 SC22 WG14 in the context of embedded C in [N946], which was subsequently worked into an early draft of [TR 18037:2008]. A later refinement (probably draft [N1275]) became the basis for address space support in LLVM, on which Zig's model of address spaces is based.
-
-## Address space cast ##
-
-Pointers do not coerce to pointer types having a different address space. It is instead necessary to perform an explicit cast using the `@addrSpaceCast` builtin function, which requires the LLVM code generation backend.
-
-The behavior of `@addrSpaceCast` depends on the target and address space pair.
-
-It is undefined behavior to dereference the result pointer of a legal address space cast if the referenced data does not exist at that address in that address space.
-
-If an address space cast is legal and returns a dereferenceable result pointer, then the result pointer points to the same memory location as the operand pointer and the cast is assumed to be reversible.
-
-It is always legal to cast a pointer to its current address space.
-
-It is an error to cast a pointer to an address space not supported by the target or to call `@addrSpaceCast` at compile time.
 
 ## Examples of address spaces ##
 

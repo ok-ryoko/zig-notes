@@ -1,6 +1,6 @@
 # Garden of Zig #
 
-This is [Ryoko]’s [digital garden] for v0.11.0 of the [Zig programming language].
+This is [Ryoko]’s [digital garden] for v0.12.0 of the [Zig programming language].
 
 The [notes](./notes) aspire to Andy Matuschak’s concept of [evergreen notes] and are synthesized primarily from:
 

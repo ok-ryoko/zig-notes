@@ -12,7 +12,7 @@ Many-item pointers support pointer arithmetic, indexing and slicing. Given a man
 
 - `p + i` and `p - i` evaluate to the memory addresses at positive and negative offsets of `i` from `p`, respectively;
 - `p[i]` interprets the data at `p + i` as a value of type `T`;
-- `p[i..]` is always an invalid expression, and
+- `p[i..]` interprets the data from `p + i` as a value of type `[*]T`;
 - `p[i..j]` interprets the data from `p + i` up to but not including `p + j` as a value of type `*[j - i]T` if `i` and `j` are known at compile time and a slice of type `[]T` having length `j - i` otherwise.
 
 Many-item pointers don't support bounds checking with one exception: When `p` and `i` are known at compile time, the expression `p - i` is bounds-checked.
@@ -33,7 +33,7 @@ The type `[*:Z]T` describes a many-item pointer for which the number of items is
 
 Given a variable `p` of type `[*:Z]T` and two index variables `i` and `j` of type `usize` such that `i <= j` equals `true`:
 
-- `p[i..]` and `p[i.. :Z]` are always invalid expressions;
+- `p[i..]` and `p[i.. :Z]` interpret the data from `p + i` as a value of type `[*:Z]T`;
 - `p[i..j]` evaluates to a value of type `*[j - i]T` if `i` and `j` are known at compile time and a slice of type `[]T` having length `j - i` otherwise, and
 - `p[i..j :Z]` evaluates to a value of type `*[j - i:Z]T` if `i` and `j` are known at compile time and a slice of type `[:Z]T` having length `j - i` otherwise while asserting that `p[j]` is equal to `Z`.
 

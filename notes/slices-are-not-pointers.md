@@ -1,6 +1,6 @@
 # Slices Are Not Pointers But Slice Types Are Pointer Types #
 
-Created on 2024-03-21; last updated on 2024-04-01
+Created on 2024-03-21; last updated on 2024-05-11
 
 Every slice is actually a container with two fields, `ptr` (a many-item pointer) and `len` (a `usize`), e.g.:
 
@@ -10,6 +10,8 @@ const expect = std.testing.expect;
 
 test {
     var s: []u8 = undefined;
+    _ = &s;
+
     try expect(@hasField(@TypeOf(s), "ptr"));
     try expect(@TypeOf(s.ptr) == [*]u8);
     try expect(@hasField(@TypeOf(s), "len"));

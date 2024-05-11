@@ -1,6 +1,6 @@
 # Pointer #
 
-Created on 2024-03-12; last updated on 2024-05-09
+Created on 2024-03-12; last updated on 2024-05-11
 
 A pointer is a memory address allowing us to read and possibly write data at that address.
 
@@ -35,6 +35,8 @@ We use the `@ptrCast` builtin function to reinterpret pointers as having a diffe
 - casting an optional pointer to a nonoptional pointer (with safety checking);
 - decreasing pointer alignment, and
 - discarding the sentinel value in a single-item pointer to a sentinel-terminated array, a sentinel-terminated many-item pointer or sentinel-terminated slice.
+
+We can also use `@ptrCast` to restructure (slices of) compile time-only arrays. This functionality allows us to, e.g., index a one-dimensional array as if it were an equally sized multidimensional array.
 
 We can't supply an undefined pointer to `@ptrCast`.
 

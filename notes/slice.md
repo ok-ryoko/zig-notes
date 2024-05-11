@@ -1,6 +1,6 @@
 # Slice #
 
-Created on 2024-03-20; last updated on 2024-04-01
+Created on 2024-03-20; last updated on 2024-05-11
 
 The type `[]T` describes a fat pointer comprising a [many-item pointer](./many-item-pointer.md) of type `[*]T` and run time-known length of type `usize`.
 
@@ -44,10 +44,10 @@ Moreover, let `n` be a `usize` equal to `s.len`. If `n` is known at compile time
 
 Like non-sentinel-terminated slices, compile time-known sentinel-terminated slices can be concatenated and multiplied, resulting in single-item pointers to sentinel-terminated arrays with all intervening sentinel values discarded.
 
-The implementation of the [`std.os.toPosixPath`] function shows how to get a `[:Z]T` from a `[]T` on the stack.
+The implementation of the [`std.posix.toPosixPath`] function shows how to get a `[:Z]T` from a `[]T` on the stack.
 
 The type `[:Z]T` coerces to the type `[]T`.
 
 The type `[:Z]T` also coerces to the type `[*:Z]T`. Even though the length of the slice is lost in this kind of conversion, the number of elements remains implied by the sentinel value.
 
-[`std.os.toPosixPath`]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/os.zig#L5502-L5510
+[`std.posix.toPosixPath`]: https://github.com/ziglang/zig/blob/0.12.0/lib/std/posix.zig#L7326-L7334

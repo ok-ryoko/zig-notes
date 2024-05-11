@@ -1,6 +1,6 @@
 # Many-item Pointer #
 
-Created on 2024-03-12; last updated on 2024-04-01
+Created on 2024-03-12; last updated on 2024-05-11
 
 The type `[*]T` describes a [pointer](./pointer.md) to an unknown number of (zero or more) items of a type `T` of known size.
 
@@ -15,13 +15,15 @@ Many-item pointers support pointer arithmetic, indexing and slicing. Given a man
 - `p[i..]` is always an invalid expression, and
 - `p[i..j]` interprets the data from `p + i` up to but not including `p + j` as a value of type `*[j - i]T` if `i` and `j` are known at compile time and a slice of type `[]T` having length `j - i` otherwise.
 
-Many-item pointers don't support bounds checking, hence the careful language above.
+Many-item pointers don't support bounds checking with one exception: When `p` and `i` are known at compile time, the expression `p - i` is bounds-checked.
 
 The syntax `(p + i).*` is disallowed for memory access. It is instead necessary to modify `p` in place and then index `p`.
 
 Many-item pointers can't be dereferenced; they must be indexed or sliced.
 
 The type `[*]T` does not coerce to the type `*T`, i.e., many-item pointers don't coerce to [single-item pointers](./single-item-pointer.md), presumably because the types have a multiplicity mismatch.
+
+The type `[*]T` does not coerce to the type `[]T`, i.e., many-item pointers don't coerce to slice types, because the number of items is unknown.
 
 Pointer arithmetic involving a many-item pointer may alter the alignment of the pointer.
 

@@ -1,6 +1,6 @@
 # C Pointer #
 
-Created on 2024-03-12; last updated on 2024-04-09
+Created on 2024-03-12; last updated on 2024-05-11
 
 The type `[*c]T` describes a C [pointer](./pointer.md).
 
@@ -26,9 +26,14 @@ C pointers coerce to and from (null-terminated) single-item and many-item pointe
 
 Coercing a C pointer to a nonoptional pointer type triggers a check for illegal behavior.
 
-The type `[:0]T` coerces to the type `[*c]T`, but `[*c]T` does not coerce to `[:0]T`. Use the `std.mem.span` function to create a value of type `[:0]T` from a nonzero value of type `[*c]T` while preserving the other attributes of the source pointer.
+The type `[:0]T` coerces to the type `[*c]T`.
+
+The type `[*c]T` coerces to neither the type `[]T` nor the type `[:0]T`.
+
+Use the [`std.mem.span`] function to create a value of type `[:0]T` from a nonzero value of type `[*c]T` while preserving the other attributes of the source pointer.
 
 C pointers coerce to and from integers and can be compared with integers. There is an [accepted proposal][ziglang/zig issue 2057] to abolish this behavior.
 
+[`std.mem.span`]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/mem.zig#L713-L730
 [ziglang/zig issue 2057]: https://github.com/ziglang/zig/issues/2057
 [ziglang/zig issue 2984]: https://github.com/ziglang/zig/issues/2984

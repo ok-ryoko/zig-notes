@@ -1,12 +1,12 @@
 # Type-erased Pointer #
 
-Created on 2024-03-12; last updated on 2024-04-01
+Created on 2024-03-12; last updated on 2024-05-13
 
 The type `*anyopaque` describes a [pointer](./pointer.md) to an arbitrary type of unknown nonzero size (see [anyopaque](./anyopaque.md)).
 
 The type `?*anyopaque` is analogous to and is used to interoperate with C's `void*` type.
 
-Explicit casting is required to reinterpret a type-erased pointer as a pointer to a type of known size. This involves at least an alignment cast with `@alignCast`, since `anyopaque` can represent an arbitrarily aligned type, followed by a pointer cast with `@ptrCast`.
+Explicit casting is required to reinterpret a type-erased pointer as a pointer to a type of known size. This involves at least an [alignment cast](./pointer-alignment.md) with `@alignCast`, since `anyopaque` can represent an arbitrarily aligned type, followed by a pointer cast with `@ptrCast`.
 
 It is an error to dereference a type-erased pointer.
 

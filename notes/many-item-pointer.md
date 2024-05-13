@@ -1,6 +1,6 @@
 # Many-item Pointer #
 
-Created on 2024-03-12; last updated on 2024-05-11
+Created on 2024-03-12; last updated on 2024-05-13
 
 The type `[*]T` describes a [pointer](./pointer.md) to an unknown number of (zero or more) items of a type `T` of known size.
 
@@ -25,7 +25,11 @@ The type `[*]T` does not coerce to the type `*T`, i.e., many-item pointers don't
 
 The type `[*]T` does not coerce to the type `[]T`, i.e., many-item pointers don't coerce to slice types, because the number of items is unknown.
 
-Pointer arithmetic involving a many-item pointer may alter the alignment of the pointer.
+Pointer arithmetic involving a many-item pointer may alter the alignment of the pointer. For any many-item pointer `p` and `usize` `i`, the alignment of `p + i` is equal to the value of the following Zig expression:
+
+```zig
+std.math.gcd(@typeInfo(@TypeOf(p)).Pointer.alignment, @intFromPtr(p + i) - @intFromPtr(p))
+```
 
 ## Sentinel-terminated many-item pointer ##
 

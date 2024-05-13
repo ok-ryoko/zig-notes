@@ -1,6 +1,6 @@
 # Pointer #
 
-Created on 2024-03-12; last updated on 2024-05-11
+Created on 2024-03-12; last updated on 2024-05-13
 
 A pointer is a memory address allowing us to read and possibly write data at that address.
 
@@ -19,7 +19,7 @@ Every pointer type has the following attributes:
 
 - size, which determines the pointer type;
 - child type, which tells us how to interpret the data to which the pointer points;
-- alignment, which holds the alignment of the pointer;
+- [alignment](./pointer-alignment.md), which holds the alignment of the pointer;
 - [address space](./pointer-address-space.md), which communicates the segment of memory in which the pointer is valid;
 - a flag to indicate whether the pointer can't be used to mutate the data to which it points, i.e., whether the pointer is [`const`](./pointer-const.md);
 - a flag to indicate whether reads and writes via the pointer have side effects (as in direct hardware access via MMIO), i.e., whether the pointer is [`volatile`](./pointer-volatile.md);

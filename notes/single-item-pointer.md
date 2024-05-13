@@ -4,9 +4,9 @@ Created on 2024-03-12; last updated on 2024-05-13
 
 The type `*T` describes a [pointer](./pointer.md) to exactly one value of type `T`.
 
-For any variable `x` of type `T`, `&x` represents the memory address of `x` as a value of type `*T`. If `x` is `const`, then `&x` evaluates to a value of type [`*const T`](./pointer-const.md).
+For any variable `x` of type `T`, the expression `&x` represents the memory address of `x` as a value of type `*T`. The presence of the keywords `const`, [`align`](./alignment.md) and [`addrspace`](./address-space.md) in the declaration of `x` influences the attributes of the type of `&x`.
 
-For any pointer `p` of type `*T`, `p.*` evaluates to the value of type `T` at the memory address held by `p`.
+For any pointer `p` of type `*T`, the expression `p.*` evaluates to the value of type `T` at the memory address held by `p`.
 
 The dereference operator has greater precedence than the address-of operator. Thus, the expression `&p.*` is interpreted as `&(p.*)`.
 

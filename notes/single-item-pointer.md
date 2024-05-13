@@ -1,6 +1,6 @@
 # Single-item Pointer #
 
-Created on 2024-03-12; last updated on 2024-05-11
+Created on 2024-03-12; last updated on 2024-05-13
 
 The type `*T` describes a [pointer](./pointer.md) to exactly one value of type `T`.
 
@@ -27,5 +27,7 @@ The type `*T` coerces to the type `*[1]T`, i.e., every single-item pointer `p` c
 For any single-item pointer `p` of type `*T`, the expression `p[0..1]` evaluates to a value of type `*[1]T` and the expressions `p[0..0]` and `p[1..1]` evaluate to a value of type `*[0]T`. Every other combination of (compile time-known) bounds results in a compilation error.
 
 The type `*[N]T` coerces to the types `[*]T` and `[]T` for all compile time-known values `N` of type `usize`. In other words, every single-item pointer to an array of any size coerces to a many-item pointer and slice. In fact, even `*[1]T` coerces to `[*]T` and `[]T` but not `*T`. In accordance with these observations, we may posit that the compiler requires coercions from `*[N]T` to conserve the manyness of the source type irrespective of the value of `N`.
+
+For any single-item pointer `p` of type `*[N]T`, the expression `p.ptr` evaluates to a `[*]T`, i.e., the corresponding many-item pointer.
 
 The type `*[N:Z]T` coerces to the types `*[N]T`, `[*:Z]T`, `[*]T`, `[:Z]T` and `[]T` for all compile time-known values `N` of type `usize` and any sentinel value `Z` of type `T`.

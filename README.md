@@ -27,8 +27,8 @@ All original written work is marked with [CC0 1.0 Universal] and all Zig source 
 [digital garden]: https://maggieappleton.com/garden-history
 [evergreen notes]: https://notes.andymatuschak.org/Evergreen_notes
 [issues]: https://github.com/ok-ryoko/garden-of-zig/issues
-[language reference]: https://ziglang.org/documentation/0.11.0/
-[language source code]: https://github.com/ziglang/zig/tree/0.11.0
+[language reference]: https://ziglang.org/documentation/0.12.0/
+[language source code]: https://github.com/ziglang/zig/tree/0.12.0
 [MIT license]: https://choosealicense.com/licenses/mit/
 [Ryoko]: https://github.com/ok-ryoko
 [Zig programming language]: https://ziglang.org

@@ -51,4 +51,4 @@ The most common sentinel-terminated many-item pointer type found in the source c
 
 Sentinel-terminated many-item pointers don't support iteration with `for` loops.
 
-[`std.mem.span`]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/mem.zig#L713-L730
+[`std.mem.span`]: https://github.com/ziglang/zig/blob/0.12.0/lib/std/mem.zig#L780-L797

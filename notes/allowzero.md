@@ -1,8 +1,8 @@
 # allowzero #
 
-Created on 2024-04-04; last updated on 2024-04-09
+Created on 2024-04-04; last updated on 2024-05-13
 
-If the type of a pointer has the `allowzero` qualifier, then that pointer may hold the zero address.
+If the [type of a pointer](./pointer.md) has the `allowzero` qualifier, then that pointer may hold the zero address.
 
 For example, the type `*allowzero T` represents a [single-item pointer](./single-item-pointer.md) that may hold the zero address.
 

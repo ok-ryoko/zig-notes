@@ -1,8 +1,8 @@
 # Slices Are Not Pointers But Slice Types Are Pointer Types #
 
-Created on 2024-03-21; last updated on 2024-05-11
+Created on 2024-03-21; last updated on 2024-05-13
 
-Every slice is actually a container with two fields, `ptr` (a many-item pointer) and `len` (a `usize`), e.g.:
+Every [slice](./slice.md) is actually a container with two fields, `ptr` (a [many-item pointer](./many-item-pointer.md)) and `len` (a `usize`), e.g.:
 
 ```zig
 const std = @import("std");

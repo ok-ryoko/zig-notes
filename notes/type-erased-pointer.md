@@ -18,5 +18,5 @@ Because [many-item pointers](./many-item-pointer.md) must have a child type of k
 
 Type-erased pointers are used along with [function pointers](./function-pointer.md) to implement polymorphism dynamically using vtables. We see this pattern in the definitions of [`std.mem.Allocator`] and [`std.rand.Random`].
 
-[`std.mem.Allocator`]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/mem/Allocator.zig
-[`std.rand.Random`]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/rand.zig#L33-L433
+[`std.mem.Allocator`]: https://github.com/ziglang/zig/blob/0.12.0/lib/std/mem/Allocator.zig
+[`std.rand.Random`]: https://github.com/ziglang/zig/blob/0.12.0/lib/std/Random.zig

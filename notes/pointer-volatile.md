@@ -1,8 +1,8 @@
 # volatile (Pointer) #
 
-Created on 2024-04-04; last updated on 2024-05-09
+Created on 2024-04-04; last updated on 2024-05-13
 
-If the type of a pointer has the `volatile` qualifier, then loads and stores with that pointer are guaranteed by the compiler to take place and to take place in the same order as in the source code relative to other volatile loads and stores.
+If the [type of a pointer](./pointer.md) has the `volatile` qualifier, then loads and stores with that pointer are guaranteed by the compiler to take place and to take place in the same order as in the source code relative to other volatile loads and stores.
 
 The `volatile` qualifier on a pointer type communicates that the data referenced by pointers of that type may change outside the program's control flow. This has the effect of suppressing optimizations by the compiler (and only the compiler).
 

@@ -1,8 +1,8 @@
 # const (Pointer) #
 
-Created on 2024-04-03; last updated on 2024-05-09
+Created on 2024-04-03; last updated on 2024-05-13
 
-If the type of a pointer has the `const` qualifier, then that pointer may not be used to mutate the referenced data.
+If the [type of a pointer](./pointer.md) has the `const` qualifier, then that pointer may not be used to mutate the referenced data.
 
 For example, the type `*const T` represents a [single-item pointer](./single-item-pointer.md) allowing loads but not stores. In C, we would call this a *pointer to `const`*. In C++, we would say that the pointer has *low-level `const`*.
 

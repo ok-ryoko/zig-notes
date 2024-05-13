@@ -1,14 +1,14 @@
 # Address Space #
 
-Created on 2024-04-04; last updated on 2024-05-09
+Created on 2024-04-04; last updated on 2024-05-13
 
 An *address space* is any logical range of memory addresses.
 
 Global constant values, global mutable values, function-local values and functions each have their own target-dependent default address space.
 
-The `addrspace` keyword can be used to qualify the address space of a global variable, function body or pointer but not a function-local variable or function pointer.
+The `addrspace` keyword can be used to qualify the address space of a global variable, function body or [pointer](./pointer.md) but not a function-local variable or [function pointer](./function-pointer.md).
 
-For any variable `x` of type `T addrspace(A)`, where `A` is a `std.builtin.AddressSpace`, the expression `&x` evaluates to a value of type `*addrspace(A) T`. Similarly, taking the address of a function body qualified to be in a particular address space yields a [function pointer](./function-pointer.md) to that address space.
+For any variable `x` of type `T addrspace(A)`, where `A` is a `std.builtin.AddressSpace`, the expression `&x` evaluates to a value of type `*addrspace(A) T`. Similarly, taking the address of a function body qualified to be in a particular address space yields a function pointer to that address space.
 
 The semantics of and relationships between address spaces are target-dependent.
 

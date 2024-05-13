@@ -1,6 +1,6 @@
 # C Pointer #
 
-Created on 2024-03-12; last updated on 2024-05-11
+Created on 2024-03-12; last updated on 2024-05-13
 
 The type `[*c]T` describes a C [pointer](./pointer.md).
 
@@ -34,6 +34,6 @@ Use the [`std.mem.span`] function to create a value of type `[:0]T` from a nonze
 
 C pointers coerce to and from integers and can be compared with integers. There is an [accepted proposal][ziglang/zig issue 2057] to abolish this behavior.
 
-[`std.mem.span`]: https://github.com/ziglang/zig/blob/0.11.0/lib/std/mem.zig#L713-L730
+[`std.mem.span`]: https://github.com/ziglang/zig/blob/0.12.0/lib/std/mem.zig#L780-L797
 [ziglang/zig issue 2057]: https://github.com/ziglang/zig/issues/2057
 [ziglang/zig issue 2984]: https://github.com/ziglang/zig/issues/2984

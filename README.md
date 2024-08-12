@@ -1,4 +1,4 @@
-# Garden of Zig #
+# Ryoko’s Zig Notes #
 
 This is [Ryoko]’s [digital garden] for v0.12.0 of the [Zig programming language].
 
@@ -26,7 +26,7 @@ All original written work is marked with [CC0 1.0 Universal] and all Zig source 
 [CC0 1.0 Universal]: https://creativecommons.org/publicdomain/zero/1.0/
 [digital garden]: https://maggieappleton.com/garden-history
 [evergreen notes]: https://notes.andymatuschak.org/Evergreen_notes
-[issues]: https://github.com/ok-ryoko/garden-of-zig/issues
+[issues]: https://github.com/ok-ryoko/zig-notes/issues
 [language reference]: https://ziglang.org/documentation/0.12.0/
 [language source code]: https://github.com/ziglang/zig/tree/0.12.0
 [MIT license]: https://choosealicense.com/licenses/mit/

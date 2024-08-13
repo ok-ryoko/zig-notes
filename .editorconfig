@@ -9,3 +9,7 @@ trim_trailing_whitespace = true
 [**.md]
 indent_style = space
 indent_size = 2
+
+[.githooks/**]
+indent_style = tab
+indent_size = 4

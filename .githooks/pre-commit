@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# Copyright 2024 OK Ryoko
+# SPDX-FileCopyrightText: Copyright 2024 OK Ryoko
 # SPDX-License-Identifier: MIT
 
 set -eu
@@ -21,19 +21,19 @@ filter() {
 
 # Handle the case where there are no commits in the local repository
 #
-if git rev-parse --verify HEAD > /dev/null 2>&1; then
-    against=HEAD
+if git rev-parse --verify HEAD > '/dev/null' 2>&1; then
+	against=HEAD
 else
-    against="$(git hash-object -t tree /dev/null)"
+	against="$(git hash-object -t tree '/dev/null')"
 fi
 readonly against
 
 # Capture the names of all files in the index, exiting early if there are no
 # changes
 #
-files="$(git diff --staged --name-only "${against}")"
+files="$(git diff --staged --name-only --diff-filter=ACMR "${against}")"
 if [ -z "${files}" ]; then
-    exit 0
+	exit 0
 fi
 readonly files
 
@@ -44,7 +44,7 @@ md_files="$(filter "${md_pattern}" "${files}")"
 readonly md_files
 if [ -n "${md_files}" ]; then
 	# shellcheck disable=SC2086
-    mdl ${md_files}
+	mdl ${md_files}
 fi
 
 exit 0
